@@ -1,0 +1,254 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  height: 80vh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 35px;
+  border-radius: 10px;
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  margin-bottom: 18px;
+}
+
+.hero .btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px 22px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+.products {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  padding: 15px;
+  background-color: #f8fafc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 12px 0 6px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #475569;
+  padding: 0 15px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact {
+  background-color: #ffffff;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.contact form {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  font-size: 0.9rem;
+  border: 1px solid #cbd5f5;
+  border-radius: 6px;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.contact button {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #1d4ed8;
+}
+
+#response {
+  margin-top: 10px;
+  color: green;
+  font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #0f172a;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .hero {
+  min-height: 80vh;
+  background-image: url("images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #0f172a; /* fallback color */
+  display: flex;
+  align-items: center;
+  padding: 50px;
+ }
+
+
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .products,
+  .contact {
+    padding: 40px 20px;
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TechZone Accessories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2>TechZone</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Computer Accessories Store</h1>
+    <p>Quality keyboards, mouse, storage & more</p>
+    <a href="#products" class="btn">Explore Products</a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <h2>Our Products</h2>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/keyboard.jpg">
+      <h3>Keyboard</h3>
+      <p>Mechanical & wireless keyboards</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/mouse.jpg">
+      <h3>Mouse</h3>
+      <p>Gaming & ergonomic mouse</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/headphones.jpg">
+      <h3>Headphones</h3>
+      <p>Noise cancelling headsets</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/webcam.jpg">
+      <h3>Webcam</h3>
+      <p>HD webcams for meetings</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/ssd.jpg">
+      <h3>External SSD</h3>
+      <p>Fast & secure storage</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Product Enquiry</h2>
+
+  <form id="enquiryForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="text" id="product" placeholder="Product Interested In" required>
+    <textarea id="message" placeholder="Message"></textarea>
+    <button type="submit">Send Enquiry</button>
+  </form>
+
+  <p id="response"></p>
+</section>
+
+<footer>
+  <p>© 2025 TechZone Computer Accessories</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
