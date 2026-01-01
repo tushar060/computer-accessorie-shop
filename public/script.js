@@ -24,7 +24,7 @@ function updateCartUI() {
   // Update floating summary
   const summaryEl = document.getElementById("cart-summary");
   document.getElementById("cart-count").innerText = `${totalItems} Items`;
-  document.getElementById("cart-total").innerText = `$${totalPrice}`;
+  document.getElementById("cart-total").innerText = `${totalPrice}`;
 
   if (totalItems > 0) {
     summaryEl.style.display = "flex";
@@ -39,7 +39,7 @@ function updateCartUI() {
   listEl.innerHTML = "";
   cart.forEach(item => {
     const li = document.createElement("li");
-    li.innerHTML = `<span>${item.name} x ${item.quantity}</span> <span>$${(item.price * item.quantity).toFixed(2)}</span>`;
+    li.innerHTML = `<span>${item.name} x ${item.quantity}</span> <span>₹${(item.price * item.quantity).toFixed(2)}</span>`;
     listEl.appendChild(li);
   });
   document.getElementById("cart-total-display").innerText = totalPrice;

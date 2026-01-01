@@ -43,41 +43,92 @@
         <img src="images/keyboard.jpg">
         <h3>Keyboard</h3>
         <p>Mechanical & wireless keyboards</p>
-        <div class="price">$49.99</div>
-        <button class="add-to-cart" onclick="addToCart('Keyboard', 49.99)">Add to Cart</button>
+        <div class="price">₹600</div>
+        <button class="add-to-cart" onclick="addToCart('Keyboard', 600.00)">Add to Cart</button>
       </div>
 
       <div class="product-card">
         <img src="images/mouse.jpg">
         <h3>Mouse</h3>
         <p>Gaming & ergonomic mouse</p>
-        <div class="price">$29.99</div>
-        <button class="add-to-cart" onclick="addToCart('Mouse', 29.99)">Add to Cart</button>
+        <div class="price">₹200</div>
+        <button class="add-to-cart" onclick="addToCart('Mouse', 200.00)">Add to Cart</button>
       </div>
 
       <div class="product-card">
         <img src="images/headphones.jpg">
         <h3>Headphones</h3>
         <p>Noise cancelling headsets</p>
-        <div class="price">$89.99</div>
-        <button class="add-to-cart" onclick="addToCart('Headphones', 89.99)">Add to Cart</button>
+        <div class="price">₹1500</div>
+        <button class="add-to-cart" onclick="addToCart('Headphones', 1500.00)">Add to Cart</button>
       </div>
 
       <div class="product-card">
         <img src="images/webcam.jpg">
         <h3>Webcam</h3>
         <p>HD webcams for meetings</p>
-        <div class="price">$39.99</div>
-        <button class="add-to-cart" onclick="addToCart('Webcam', 39.99)">Add to Cart</button>
+        <div class="price">₹2000</div>
+        <button class="add-to-cart" onclick="addToCart('Webcam', 2000.00)">Add to Cart</button>
       </div>
 
       <div class="product-card">
         <img src="images/ssd.jpg">
         <h3>External SSD</h3>
         <p>Fast & secure storage</p>
-        <div class="price">$79.99</div>
-        <button class="add-to-cart" onclick="addToCart('External SSD', 79.99)">Add to Cart</button>
+        <div class="price">₹5000</div>
+        <button class="add-to-cart" onclick="addToCart('External SSD', 5000.00)">Add to Cart</button>
       </div>
+
+      <div class="product-card">
+        <img src="images/hero.jpg">
+        <h3>TZ mouse pad</h3>
+        <p>special merch</p>
+        <div class="price">₹50</div>
+        <button class="add-to-cart" onclick="addToCart('TZ mouse pad', 50.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/monitor.jpg">
+        <h3>monitor</h3>
+        <p>oled display</p>
+        <div class="price">₹4000</div>
+        <button class="add-to-cart" onclick="addToCart('monitor', 4000.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/speaker.jpg">
+        <h3>speaker</h3>
+        <p>high sound speaker</p>
+        <div class="price">₹2500</div>
+        <button class="add-to-cart" onclick="addToCart('speaker', 2500.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/ram.jpg">
+        <h3>ram</h3>
+        <p>ddr5 ram</p>
+        <div class="price">₹4000</div>
+        <button class="add-to-cart" onclick="addToCart('ram', 4000.00)">Add to Cart</button>
+      </div>
+
+      <!--
+      <div class="product-card">
+        <img src="images/printer.jpg">
+        <h3>printer</h3>
+        <p>color printer</p>
+        <div class="price">₹20000</div>
+        <button class="add-to-cart" onclick="addToCart('printer', 20000.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/PortExtender.jpg">
+        <h3>PortExtender</h3>
+        <p>provides extra usb ports</p>
+        <div class="price">₹300</div>
+        <button class="add-to-cart" onclick="addToCart('ram', 300.00)">Add to Cart</button>
+      </div>
+        -->
+
     </div>
   </section>
 
@@ -88,7 +139,7 @@
     <div id="cart-details" style="display:none; max-width: 420px; margin: 0 auto 20px;">
       <h3>Your Cart</h3>
       <ul id="cart-items-list"></ul>
-      <p><strong>Total: $<span id="cart-total-display">0.00</span></strong></p>
+      <p><strong>Total: ₹<span id="cart-total-display">0.00</span></strong></p>
     </div>
 
     <form id="enquiryForm">
@@ -105,7 +156,7 @@
 
   <div id="cart-summary">
     <span id="cart-count">0 Items</span>
-    <span id="cart-total">$0.00</span>
+    <span id="cart-total">₹0.00</span>
     <a href="#contact" style="color: #60a5fa; text-decoration: none; margin-left: 10px;">Proceed to Enquiry</a>
   </div>
 
