@@ -111,24 +111,6 @@
         <button class="add-to-cart" onclick="addToCart('ram', 4000.00)">Add to Cart</button>
       </div>
 
-      <!--
-      <div class="product-card">
-        <img src="images/printer.jpg">
-        <h3>printer</h3>
-        <p>color printer</p>
-        <div class="price">₹20000</div>
-        <button class="add-to-cart" onclick="addToCart('printer', 20000.00)">Add to Cart</button>
-      </div>
-
-      <div class="product-card">
-        <img src="images/PortExtender.jpg">
-        <h3>PortExtender</h3>
-        <p>provides extra usb ports</p>
-        <div class="price">₹300</div>
-        <button class="add-to-cart" onclick="addToCart('ram', 300.00)">Add to Cart</button>
-      </div>
-        -->
-
     </div>
   </section>
 
@@ -154,6 +136,20 @@
     <p id="response"></p>
   </section>
 
+  <!-- FEEDBACK -->
+  <section class="feedback" id="feedback">
+    <h2>Give Feedback</h2>
+    <form id="feedbackForm">
+      <input type="text" id="feedback-name" placeholder="Your Name" required>
+      <input type="email" id="feedback-email" placeholder="Your Email" required>
+      <input type="tel" id="feedback-phone" placeholder="Your Phone (10 digits)" required>
+      <textarea id="feedback-text" placeholder="Your Feedback" required></textarea>
+      <div id="feedback-error" style="color: red; margin-bottom: 10px;"></div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <p id="feedback-response"></p>
+  </section>
+
   <div id="cart-summary">
     <span id="cart-count">0 Items</span>
     <span id="cart-total">₹0.00</span>
@@ -168,3 +164,22 @@
 </body>
 
 </html>
+
+
+<!--
+      <div class="product-card">
+        <img src="images/printer.jpg">
+        <h3>printer</h3>
+        <p>color printer</p>
+        <div class="price">₹20000</div>
+        <button class="add-to-cart" onclick="addToCart('printer', 20000.00)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/PortExtender.jpg">
+        <h3>PortExtender</h3>
+        <p>provides extra usb ports</p>
+        <div class="price">₹300</div>
+        <button class="add-to-cart" onclick="addToCart('ram', 300.00)">Add to Cart</button>
+      </div>
+    -->

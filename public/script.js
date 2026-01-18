@@ -77,3 +77,43 @@ document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
   updateCartUI();
   document.getElementById("enquiryForm").reset();
 });
+
+// Feedback handling
+const feedbackForm = document.getElementById("feedbackForm");
+if (feedbackForm) {
+  feedbackForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("feedback-name").value;
+    const email = document.getElementById("feedback-email").value;
+    const phone = document.getElementById("feedback-phone").value;
+    const feedback = document.getElementById("feedback-text").value;
+    const errorDiv = document.getElementById("feedback-error");
+
+    // Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+
+    if (!emailRegex.test(email)) {
+      errorDiv.innerText = "Please enter a valid email address.";
+      return;
+    }
+
+    if (!phoneRegex.test(phone)) {
+      errorDiv.innerText = "Please enter a valid 10-digit phone number.";
+      return;
+    }
+
+    errorDiv.innerText = ""; // Clear errors
+
+    const response = await fetch("/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, phone, feedback })
+    });
+
+    const result = await response.json();
+    document.getElementById("feedback-response").innerText = result.message;
+    feedbackForm.reset();
+  });
+}

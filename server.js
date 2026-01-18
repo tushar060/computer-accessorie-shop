@@ -64,6 +64,22 @@ app.post("/enquiry", async (req, res) => {
   res.json({ message: "Enquiry sent with order details!" });
 });
 
+// Feedback route
+const fs = require('fs');
+
+app.post("/feedback", (req, res) => {
+  const { name, feedback, email, phone } = req.body;
+  const logEntry = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nFeedback: ${feedback}\nDate: ${new Date().toLocaleString()}\n--------------------------\n`;
+
+  fs.appendFile("feedbacks.txt", logEntry, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: "Error saving feedback" });
+    }
+    res.json({ message: "Feedback saved locally!" });
+  });
+});
+
 // Admin view
 app.get("/admin/enquiries", async (req, res) => {
   const data = await Enquiry.find();
