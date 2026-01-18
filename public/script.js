@@ -19,12 +19,19 @@ function addToCart(name, price) {
 
 function updateCartUI() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2);
+  const subTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+  let discount = 0;
+  if (subTotal >= 1000) {
+    discount = subTotal * 0.10;
+  }
+
+  const finalTotal = subTotal - discount;
 
   // Update floating summary
   const summaryEl = document.getElementById("cart-summary");
   document.getElementById("cart-count").innerText = `${totalItems} Items`;
-  document.getElementById("cart-total").innerText = `${totalPrice}`;
+  document.getElementById("cart-total").innerText = `₹${finalTotal.toFixed(2)}`;
 
   if (totalItems > 0) {
     summaryEl.style.display = "flex";
@@ -42,7 +49,18 @@ function updateCartUI() {
     li.innerHTML = `<span>${item.name} x ${item.quantity}</span> <span>₹${(item.price * item.quantity).toFixed(2)}</span>`;
     listEl.appendChild(li);
   });
-  document.getElementById("cart-total-display").innerText = totalPrice;
+
+  // Update Totals Display
+  const totalDisplay = document.getElementById("cart-total-info");
+  if (discount > 0) {
+    totalDisplay.innerHTML = `
+        <p>Subtotal: ₹${subTotal.toFixed(2)}</p>
+        <p style="color: green;">Discount (10%): -₹${discount.toFixed(2)}</p>
+        <p><strong>Total: ₹${finalTotal.toFixed(2)}</strong></p>
+      `;
+  } else {
+    totalDisplay.innerHTML = `<p><strong>Total: ₹${finalTotal.toFixed(2)}</strong></p>`;
+  }
 }
 
 
@@ -54,13 +72,20 @@ document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
     return;
   }
 
+  const subTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  let discount = 0;
+  if (subTotal >= 1000) {
+    discount = subTotal * 0.10;
+  }
+  const finalTotal = subTotal - discount;
+
   const enquiry = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     product: "Multiple Items (Cart)", // Legacy field
     message: document.getElementById("message").value,
     cart: cart,
-    totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+    totalAmount: finalTotal
   };
 
   const response = await fetch("/enquiry", {
