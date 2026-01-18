@@ -61,7 +61,7 @@ app.post("/enquiry", async (req, res) => {
     date: new Date().toLocaleString()
   });
   await enquiry.save();
-  res.json({ message: "Enquiry sent with order details!" });
+  res.json({ message: "Thank you ,Enquiry sent with order details!" });
 });
 
 // Feedback route
@@ -76,7 +76,7 @@ app.post("/feedback", (req, res) => {
       console.error(err);
       return res.status(500).json({ message: "Error saving feedback" });
     }
-    res.json({ message: "Feedback saved locally!" });
+    res.json({ message: "Thank you for your feedback!" });
   });
 });
 
