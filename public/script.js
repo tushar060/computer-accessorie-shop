@@ -5,6 +5,15 @@ function logout() {
   window.location.href = "login.html";
 }
 
+function toggleSpecialOffer() {
+  const section = document.getElementById("special-offer-section");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+  }
+}
+
 let cart = [];
 
 function addToCart(name, price) {
